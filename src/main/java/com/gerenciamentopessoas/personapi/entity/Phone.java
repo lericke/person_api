@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
+@Entity
 @Data
 @Builder
 @AllArgsConstructor
@@ -24,5 +25,4 @@ public class Phone {
 
     @Column(nullable = false)
     private String number;
-
 }
