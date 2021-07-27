@@ -4,8 +4,10 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.criterion.NotEmptyExpression;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 @Data
@@ -18,21 +20,19 @@ public class PersonDTO {
 
     @NotEmpty
     @Size(min = 2, max = 100)
-    private String firstname;
+    private String firstName;
 
     @NotEmpty
     @Size(min = 2, max = 100)
-    private String lastname;
+    private String lastName;
 
     @NotEmpty
-    @CPF
+    @Size(min = 11, max = 11)
     private String cpf;
 
-    private String birthdate;
+    private String birthDate;
 
-    @Valid
     @NotEmpty
-    private List <PhontDTO> phones;
-
-
+    @Valid
+    private List<PhoneDTO> phones;
 }
